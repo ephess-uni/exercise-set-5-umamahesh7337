@@ -1,4 +1,5 @@
 """ex_5_1.py"""
+import argparse
 try:
     from src.ex_5_0 import line_count
 except ImportError:
@@ -17,4 +18,10 @@ if __name__ == "__main__":
     # Tests will run your command using a system call.
     # To test your program with arguments, run it from the command line
     # (see README.md for more details)
-    pass
+    given_words = "This program prints the number of lines in infile."
+    argparser = argparse.ArgumentParser(description=given_words)
+    argparser.add_argument("infile", type=argparse.FileType('r'))
+    args = argparser.parse_args()
+
+    if args.infile:
+        line_count(args.infile.name)
