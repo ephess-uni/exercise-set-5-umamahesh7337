@@ -22,7 +22,7 @@ if __name__ == "__main__":
     INFILE = root_dir / "data" / "ex_5_2-data.csv"
     OUTFILE = root_dir / "outputs" / "ex_5_2-processed.csv"
     os.makedirs(root_dir / "outputs", exist_ok=True)
-    data = np.loadtxt("input_data.txt").
+    data = np.loadtxt(INFILE)
     mean_data = np.mean(data)
     zero_mean_data = data - mean_data
     std_data = np.std(zero_mean_data)
