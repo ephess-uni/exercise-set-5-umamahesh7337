@@ -19,7 +19,7 @@ if __name__ == "__main__":
     obj_parse = ArgumentParser(description="This program applies a standard scale transform to the data in infile and writes it to outfile")
     obj_parse.add_argument("infile", type=argparse.FileType('r'))
     obj_parse.add_argument("outfile", type=argparse.FileType('w'))
-    args_p = p.parse_args()
+    args_p = obj_parse.parse_args()
     data = np.loadtxt("input_data.txt")
     mean_data = np.mean(data)
     zero_mean_data = data - mean_data
